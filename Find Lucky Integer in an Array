@@ -1,0 +1,19 @@
+class Solution {
+public:
+    int findLucky(vector<int>& a) {
+        map<int,int>mp;
+int n=a.size();
+for(int i=0;i<n;i++){
+    mp[a[i]]++;
+}
+int ans=-1;
+for(auto it:mp){
+    if(it.first==it.second){
+            int val=it.first;
+    //cout<<val;
+        ans=max(ans,val);
+    }
+}
+return ans;
+    }
+};
